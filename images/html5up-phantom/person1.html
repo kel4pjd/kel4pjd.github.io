@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>About Us - KELOMPOK 4 PROJECT DAY</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* Custom CSS for the About Us section */
+        .about-us {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .about-us article {
+            flex: 1 1 calc(15px - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+        .about-us img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px; /* Rounded corners */
+            object-fit: cover;  /* Ensures the image covers the entire area */
+        }
+        .about-us .image-container {
+            width: 100%;
+            padding-bottom: 100%; /* Aspect ratio 1:1 */
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px; /* Rounded corners */
+        }
+        .about-us .image-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .about-us h2 {
+            margin-top: 15px; /* Adjust the name position */
+            margin-bottom: 5px; /* Reduce space between name and description */
+        }
+        .about-us p {
+            margin-top: 0; /* Remove default margin */
+        }
+        /* Custom CSS for header image */
+        .header-image {
+            width: 100%;
+            height: auto;
+        }
+        body {
+            margin-top: 0; /* Menghapus margin atas */
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <!-- Header Image -->
+        <div>
+            <img src="images/kami.png" alt="Header Image" class="header-image" />
+        </div>
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">Tentang Kami</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+            </ul>
+        </nav>
+        
+        <h1><span class="image left"><img src="images/Atsilla Syifa Puti Arini_KSK.jpg" alt=""/></span>Atsilla Syifa Puti Arini</h1>
+        <h2>21/481361/SV/19765</h2>
+        <iframe src="images/Atsilla Syifa Puti Arini.pdf" width="100%" height="600px"></iframe>
+
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <h2>KOMENTAR</h2>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <input type="text" name="name" id="name" placeholder="Nama" />
+                            </div>
+                            <div class="field half">
+                                <input type="email" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="field">
+                                <textarea name="message" id="message" placeholder="Pesan dan Kesan"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="KIRIM" class="primary" /></li>
+                        </ul>
+                    </form>
+                </section>
+                <section>
+                    <h2>Follow</h2>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </section>
+                <ul class="copyright">
+                    <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

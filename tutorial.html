@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Phantom by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Custom CSS to make the boxes align in a single row */
+        .tiles {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+        .tiles article {
+            flex: 1;
+            margin: 0 10px;
+        }
+        /* Remove top and bottom margins and paddings */
+        body, h2, p, ol, li, img {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        section {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .content {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .content header {
+            margin-bottom: 0;
+        }
+		.header-image {
+            width: 100%;
+            height: auto;
+}
+    </style>
+</head>
+<body class="is-preload">
+    <div>
+        <img src="images/header tutorial.png" alt="Header Image" class="header-image" />
+    </div>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/logo.svg" alt="" /></span>
+                    <span class="title">KELOMPOK 4 PROJECT DAY</span>
+                </a>
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li>
+                    <a href="index.html">Home &hellip;</a>
+                    <ul>
+                        <li><a href="tb.html">TB Paru</a></li>
+                        <li><a href="pneumonia.html">Pneumonia</a></li>
+                        <li><a href="dbd.html">Demam Berdarah</a></li>
+                        <li><a href="diare.html">Diare</a></li>
+                    </ul>
+                </li>
+                <li><a href="aboutus.html">Tentang Kami</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section -->
+        <section id="intro" class="main">
+            <div class="content">
+                <header class="major">
+                    <h2 style="padding-left: 5%; font-size: larger;">A. Menentukan Dataset</h2>
+                </header>
+                <p style="max-width: 95%; padding-left: 8.5%; text-align: justify;">
+                    Data yang digunakan merupakan data dari Badan Pusat Statistik (BPS) Kabupaten Bantul dengan proses pencarian sebagai berikut:
+                </p>
+                <ol style="padding-left: 9.5%;">
+                    <li>Membuka laman BPS Kabupaten Bantul
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            <a href="https://bantulkab.bps.go.id/">https://bantulkab.bps.go.id/</a>
+                        </p>
+                    </li>
+                    <li>Membuka data Sosial dan Kependudukan bagian kesehatan
+                        <img src="images/cari dataset.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                    </li>
+                    <li>Memilah 1 dataset dari 5 dataset yang tertampil, yaitu dataset dengan judul “Prevalensi Jenis Penyakit per Kecamatan, 2018–2021”
+                        <img src="images/pilih dataset.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Dataset yang dipilih berisi data prevalensi penyakit dari 18 Kecamatan di Kabupaten Bantul selama periode 2019–2021. Data ini mencakup informasi mengenai TB Paru, Pneumonia Balita, DBD, dan Diare.
+                        </p>
+                        <img src="images/tampilan dataset.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                    </li>
+                </ol>
+            </div>
+            <div class="content">
+                <header class="major">
+                    <h2 style="padding-left: 5%; font-size: larger; margin-top: 2%;">B. Mengolah dan Visualisasi</h2>
+                </header>
+                <p style="max-width: 95%; padding-left: 8.5%; text-align: justify;">
+                    Pengolahan data dilakukan sebelum memvisualisasikan data menggunakan aplikasi Tableau. Berikut merupakan langkah-langkah dalam mengolah dan mempersiapkan data sebelum dilakukan visualisasi data:
+                </p>
+                <ol style="padding-left: 9.5%;">
+                    <li>Menghubungkan data ke dalam Tableau
+                        <img src="images/tableau.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Data yang dihubungkan/dimasukkan ke dalam Tableau yaitu file dataset yang telah dipilih (format .xls/.xlsx/.csv) dan data geospasial (format .shp) untuk visualisasi berbentuk peta wilayah.
+                        </p>
+                    </li>
+                    <li>Menyusun dan menggabungkan data
+                        <img src="images/sheet1.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Dilakukan pivot data untuk atribut 2019, 2020, dan 2021 pada dataset “Prevalensi Jenis Penyakit per Kecamatan, 2019-2021” dengan nama file “Data”.
+                        </p>
+                        <img src="images/sheet2.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Pivot data menghasilkan 2 atribut baru yang kemudian diberi nama Tahun dan Jumlah Kasus.
+                        </p>
+                        <img src="images/sheet3.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Dilakukan penyesuaian jenis atribut menjadi Number (whole) untuk atribut Jumlah Kasus.
+                        </p>
+                        <img src="images/sheet4.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Dilakukan penggabungan kedua data (dataset “Data” dan data spasial “Administrasi_Desa_AR_25K”) menggunakan relasi atribut Kecamatan pada dataset “Data” dan atribut Wadmkc pada data spasial “Administrasi_Desa_AR_25K”.
+                        </p>
+                    </li>
+                    <li>Visualisasi data
+                        <p style="padding-left: 0.3%; max-width: 95%;">Visualisasi peta wilayah:</p>
+                        <img src="images/visualisasi wilayah.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%;">Visualisasi tabel jumlah kasus per penyakit:</p>
+                        <img src="images/visualisasi kasus.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%;">Visualisasi grafik batang tren penyakit:</p>
+                        <img src="images/visualisasi tren.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%;">Visualisasi grafik pie jumlah kasus per tahun:</p>
+                        <img src="images/visualisasi pie.png" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                    </li>
+                </ol>
+            </div>
+            <div class="content">
+                <header class="major">
+                    <h2 style="padding-left: 5%; font-size: larger; margin-top: 2%;">C. Membuat Website</h2>
+                </header>
+                <p style="max-width: 95%; padding-left: 8.5%; text-align: justify;">
+                    Data yang digunakan merupakan data dari Badan Pusat Statistik (BPS) Kabupaten Bantul dengan proses pencarian sebagai berikut:
+                </p>
+                <ol style="padding-left: 9.5%;">
+                    <li>Memilih template html di html5up.net
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            <a href="http://html5up.net">http://html5up.net</a>
+                        </p>
+                        <img src="images/phantom.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                    </li>
+                    <li>Mengedit template di aplikasi
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Kami mengedit template html yang telah dipilih menggunakan Visual Studio Code (VS Code), yaitu sebuah teks editor ringan dan handal yang dibuat oleh Microsoft untuk Windows, macOS, dan Linux. VS Code mendukung berbagai bahasa pemrograman seperti HTML, CSS, JavaScript, Phyton, PHP, dan sebagainya.
+                        </p>
+                    </li>
+                    <li>Bahasa pemrograman yang digunakan
+                        <p style="padding-left: 0.3%; max-width: 95%;">"HTML"</p>
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Hyper Text Markup Language (HTML) merupakan bahasa markup yang digunakan untuk membuat halaman web dan menampilkan berbagai informasi di browser internet. HTML terdiri dari kode-kode tag yang menginstruksikan browser untuk menampilkan halaman sesuai dengan yang diinginkan. Dokumen HTML dapat memuat teks, gambar, audio, maupun video. Pada dasarnya, elemen HTML terdiri dari "head" yang berfungsi untuk memberikan informasi atau mendeklarasikan dokumen tersebut dan "body" yang berfungsi untuk menentukan bagaimana isi suatu dokumen ditampilkan pada browser.
+                        </p>
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">"CSS"</p>
+                        <p style="padding-left: 0.3%; max-width: 95%; text-align: justify;">
+                            Cascading style sheet (CSS) merupakan perintah atau aturan-aturan yang digunakan untuk menentukan bagaimana elemen HTML dapat ditampilkan agar tampilannya menjadi lebih menarik.
+                        </p>
+                        <p style="padding-left: 0.3%; max-width: 95%;">Tanpa CSS:</p>
+                        <img src="images/tanpa css.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                        <p style="padding-left: 0.3%; max-width: 95%;">Dengan CSS:</p>
+                        <img src="images/dengan css.PNG" style="display: block; max-width: 60%; height: auto; padding-left:0.3%;">
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    </div>
+</body>
+</html>
