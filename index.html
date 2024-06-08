@@ -30,6 +30,36 @@
             max-width: 1200px; /* Adjust the maximum width as needed */
             margin: 0 10px;
         }
+        .comments {
+            list-style-type: none;
+            padding: 0;
+        }
+        .comments li {
+            border-bottom: 1px solid #e6e6e6;
+            padding: 10px 0;
+            position: relative;
+        }
+        .comments li h3 {
+            margin: 0 0 5px;
+        }
+        .comments li p {
+            margin: 5px 0;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+        .delete-btn:hover {
+            background-color: #b3b3b3;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -160,31 +190,39 @@
                         vizElement.parentNode.insertBefore(scriptElement, vizElement);                
                     </script>
                 </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
                 <section>
-                    <h2>KOMENTAR</h2>
-                    <form method="post" action="#">
+                    <h2 style="margin-top: 8%;">KOMENTAR</h2>
+                    <form id="comment-form">
                         <div class="fields">
-                            <div class="field half">
-                                <input type="text" name="name" id="name" placeholder="Nama" />
-                            </div>
-                            <div class="field half">
-                                <input type="email" name="email" id="email" placeholder="Email" />
+                            <div class="field">
+                                <input type="email" name="email" id="email" placeholder="Email" required />
                             </div>
                             <div class="field">
-                                <textarea name="message" id="message" placeholder="Pesan dan Kesan"></textarea>
+                                <textarea name="message" id="message" placeholder="Pesan dan Kesan" required></textarea>
+                            </div>
+                            <div class="field">
+                                <select name="rating" id="rating" required>
+                                    <option value="">Pilih Rating</option>
+                                    <option value="1">1 Bintang</option>
+                                    <option value="2">2 Bintang</option>
+                                    <option value="3">3 Bintang</option>
+                                    <option value="4">4 Bintang</option>
+                                    <option value="5">5 Bintang</option>
+                                </select>
                             </div>
                         </div>
                         <ul class="actions">
                             <li><input type="submit" value="KIRIM" class="primary" /></li>
                         </ul>
                     </form>
+                    <ul id="comment-list" class="comments"></ul>
                 </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
                 <section>
                     <h2>Follow</h2>
                     <ul class="icons">
@@ -198,6 +236,7 @@
                         <li><a href="https://www.instagram.com/mik21gubrak/" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
                     </ul>
                 </section>
+                
                 <ul class="copyright">
                     <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                 </ul>
@@ -211,5 +250,68 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Tambahkan di bagian bawah sebelum </body> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const commentForm = document.getElementById('comment-form');
+            const commentList = document.getElementById('comment-list');
+
+            function loadComments() {
+                const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+                comments.forEach((comment, index) => {
+                    const newComment = document.createElement('li');
+                    newComment.innerHTML = `
+                        <p>Email: ${comment.email}</p>
+                        <p>Rating: ${comment.rating}</p>
+                        <p>${comment.message}</p>
+                        <button class="delete-btn" data-index="${index}">Hapus</button>
+                    `;
+                    commentList.appendChild(newComment);
+                });
+            }
+
+            function saveComment(comment) {
+                const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+                comments.push(comment);
+                localStorage.setItem('comments', JSON.stringify(comments));
+            }
+
+            function deleteComment(index) {
+                const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+                comments.splice(index, 1);
+                localStorage.setItem('comments', JSON.stringify(comments));
+                renderComments();
+            }
+
+            function renderComments() {
+                commentList.innerHTML = '';
+                loadComments();
+            }
+
+            commentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(commentForm);
+                const commentData = {
+                    email: formData.get('email'),
+                    message: formData.get('message'),
+                    rating: formData.get('rating')
+                };
+
+                saveComment(commentData);
+                renderComments();
+                commentForm.reset();
+            });
+
+            commentList.addEventListener('click', function(event) {
+                if (event.target.classList.contains('delete-btn')) {
+                    const index = event.target.getAttribute('data-index');
+                    deleteComment(index);
+                }
+            });
+
+            loadComments();
+        });
+    </script>
 </body>
 </html>
